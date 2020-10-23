@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "infinity-quiz"
+    }
+  },
+  "defaultProject": "infinity-quiz",
+  "cli": {
+    "analytics": "4f1b615b-f56c-4150-91bf-56bec3d27ed3"
+  }
 }
