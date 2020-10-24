@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    <span>Infinity Quiz</span>
+    <span class="spacer"></span>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>settings</mat-icon>
+</mat-toolbar>
+
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" (click)="drawer.toggle()">
+        <app-side-nav></app-side-nav>
+    </mat-drawer>
+
+    <div class="sidenav-content" (click)="drawer.toggle()">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
