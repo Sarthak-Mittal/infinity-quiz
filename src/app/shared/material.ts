@@ -5,6 +5,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+
+
 
 
 @NgModule({
@@ -13,14 +17,18 @@ import {MatListModule} from '@angular/material/list';
         MatIconModule,
         MatSlideToggleModule,
         MatSidenavModule,
-        MatListModule
+        MatListModule,
+        MatCardModule,
+        MatDividerModule
     ],
     exports: [
         MatToolbarModule,
         MatIconModule,
         MatSlideToggleModule,
         MatSidenavModule,
-        MatListModule
+        MatListModule,
+        MatCardModule,
+        MatDividerModule
     ]
 })
 export class MaterialModule {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CanvasComponent } from './canvas/canvas.component';
+import { ZenCanvasComponent } from './zen-canvas/zen-canvas.component';
+
 
 
 
@@ -9,10 +10,10 @@ import { CanvasComponent } from './canvas/canvas.component';
     CommonModule
   ],
   declarations: [
-    CanvasComponent
+    ZenCanvasComponent
   ],
   exports:[
-    CanvasComponent
+    ZenCanvasComponent
   ]
 })
 export class ZenModeModule { }

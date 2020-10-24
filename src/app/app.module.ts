@@ -10,6 +10,8 @@ import { ZenModeModule } from './zen-mode/zen-mode.module';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { SideNavComponent } from './shared/components/side-nav/side-nav.component';
+import { TimeBasedModule } from './time-based/time-based.module';
+import { TwoPlayerModule } from './two-player/two-player.module';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { SideNavComponent } from './shared/components/side-nav/side-nav.componen
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    ZenModeModule
+    ZenModeModule,
+    TimeBasedModule,
+    TwoPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
