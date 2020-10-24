@@ -1,35 +1,8 @@
 <div class="row d-flex align-items-center">
     <div class="col">
         <div class="alert alert-primary card card-body h-100 justify-content-center">
-            <p>A simple primary alert—check it out!</p>
+            <p>{{statement}}</p>
         </div>
     </div>
 </div>
-<div class="row d-flex align-items-center">
-    <div class="col">
-        <div class="alert card card-body h-100 justify-content-center">
-            <app-option></app-option>
-        </div>
-    </div>
-</div>
-<div class="row d-flex align-items-center">
-    <div class="col">
-        <div class="alert card card-body h-100 justify-content-center">
-            <app-option></app-option>
-        </div>
-    </div>
-</div>
-<div class="row d-flex align-items-center">
-    <div class="col">
-        <div class="alert card card-body h-100 justify-content-center">
-            <app-option></app-option>
-        </div>
-    </div>
-</div>
-<div class="row d-flex align-items-center">
-    <div class="col">
-        <div class="alert card card-body h-100 justify-content-center">
-            <app-option></app-option>
-        </div>
-    </div>
-</div>
+<app-options [options]="options" (selectedOption)="returnedOpt($event)"></app-options>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-statement',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatementComponent implements OnInit {
 
+  @Input() statement: string;
+  @Input() options: string[];
+  @Output() selectedOpt = new EventEmitter<string>();
+
+  returnedOpt(optionSelected) {
+    this.selectedOpt.emit(optionSelected)
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
