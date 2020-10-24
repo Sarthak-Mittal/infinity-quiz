@@ -1,0 +1,16 @@
+.blog-footer {
+    padding: 1.5rem 8rem;
+    text-align: center;
+    background-color: #7b1fa2;
+    background-image: linear-gradient( rgb(36, 36, 36), #7b1fa2);
+}
+
+.github_logo {
+    width: 4rem;
+    height: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
