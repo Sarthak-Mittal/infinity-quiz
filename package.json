@@ -8,7 +8,8 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "ngcc"
+        "postinstall": "ngcc",
+        "build-prod": "ng build --prod --baseHref='https://Sarthak-Mittal.github.io/infinity-quiz/'"
     },
     "private": true,
     "dependencies": {
