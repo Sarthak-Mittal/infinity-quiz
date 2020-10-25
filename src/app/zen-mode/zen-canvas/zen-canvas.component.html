@@ -1,3 +1,5 @@
+<mat-spinner class="mx-auto my-spinner" *ngIf="inTransit"></mat-spinner>
+
 <div class="zen-canvas container">
     <app-statement [statement]="statement" [options]="options" (selectedOpt)="selected=$event"></app-statement>
 </div>

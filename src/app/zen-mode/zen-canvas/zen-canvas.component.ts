@@ -14,7 +14,7 @@ export class ZenCanvasComponent implements OnInit {
   selected: string;
 
   triviaResponse: triviaResponse = null;
-
+  inTransit : boolean = false;
   constructor(private triviaDbService: TriviaDbService) { }
 
   ngOnInit(): void {
@@ -23,15 +23,17 @@ export class ZenCanvasComponent implements OnInit {
   }
 
   getQuestion(){
+    this.inTransit = true
     this.triviaDbService.getQuestion("1","multiple").subscribe(
       (data: triviaResponse) =>{
         this.triviaResponse = data;
-
+        
         if(this.triviaResponse.response_code == "0"){
           this.statement = this.triviaResponse.results[0].question;
           this.correctAnswer = this.triviaResponse.results[0].correct_answer;
           this.options = this.jumbleUpOptions(this.triviaResponse.results[0].correct_answer, this.triviaResponse.results[0].incorrect_answers);    
         }
+        this.inTransit = false
       },
       (error)=>{
         console.log(error)
