@@ -1,3 +1,10 @@
 .my-options {
-    padding: 30px 30px 0 30px;
+    padding: 0 2rem 0 2rem;
+}
+
+.my-card {
+    border: 0px;
+    font-size: 1.2rem;
+    background-color: ivory;
+    color: inherit;
 }
