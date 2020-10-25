@@ -1,4 +1,4 @@
 <div class="zen-canvas container">
     <app-statement [statement]="statement" [options]="options" (selectedOpt)="selected=$event"></app-statement>
 </div>
-<div *ngIf="correctAnswer == selected">Correct</div>
+<div *ngIf="correctAnswer === selected && correctAnswer != null && selected != null">Correct</div>

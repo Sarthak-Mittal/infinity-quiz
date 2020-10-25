@@ -12,6 +12,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { SideNavComponent } from './shared/components/side-nav/side-nav.component';
 import { TimeBasedModule } from './time-based/time-based.module';
 import { TwoPlayerModule } from './two-player/two-player.module';
+import { TriviaDbService } from './shared/services/trivia-db.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,9 +30,10 @@ import { TwoPlayerModule } from './two-player/two-player.module';
     AppRoutingModule,
     ZenModeModule,
     TimeBasedModule,
-    TwoPlayerModule
+    TwoPlayerModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TriviaDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
