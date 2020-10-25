@@ -9,10 +9,11 @@ export class StatementComponent implements OnInit {
 
   @Input() statement: string;
   @Input() options: string[];
-  @Output() selectedOpt = new EventEmitter<string>();
+  @Input() correctAns: string;
+  @Output() result = new EventEmitter<boolean>();
 
-  returnedOpt(optionSelected) {
-    this.selectedOpt.emit(optionSelected)
+  returnedResult(result: boolean) {
+    this.result.emit(result)
   }
   
   constructor() { }

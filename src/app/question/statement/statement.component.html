@@ -5,4 +5,4 @@
         </div>
     </div>
 </div>
-<app-options [options]="options" (selectedOption)="returnedOpt($event)"></app-options>
+<app-options [options]="options" [correctAns]="correctAns" (result)="returnedResult($event)"></app-options>

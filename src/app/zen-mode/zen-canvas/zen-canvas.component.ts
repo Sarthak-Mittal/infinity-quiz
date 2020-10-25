@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
 
@@ -11,15 +12,15 @@ export class ZenCanvasComponent implements OnInit {
   statement: string;
   options: string[] = [];
   correctAnswer: string;
-  selected: string;
+  result: boolean;
 
   triviaResponse: triviaResponse = null;
   inTransit : boolean = false;
-  constructor(private triviaDbService: TriviaDbService) { }
-
+  constructor(private triviaDbService: TriviaDbService) { 
+  }
+  
   ngOnInit(): void {
-
-    this.getQuestion();  
+    this.getQuestion();     
   }
 
   getQuestion(){

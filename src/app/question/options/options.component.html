@@ -1,8 +1,8 @@
 <div class="my-options">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 btn" (click)="selected(option)" *ngFor="let option of options">
-            <div class="alert alert-dark card card-body my-card">
-                <p>{{option}}</p>
+            <div class="alert alert-dark card card-body my-card" [ngClass]="answerGiven ? (optionChosen==option) ? (optionChosen==correctAns) ? 'correct' : 'wrong' : (option==correctAns)?'correct':''  : ''">
+                <p class="my-para">{{option}}</p>
             </div>
         </div>
     </div>

@@ -8,3 +8,20 @@
     background-color: ivory;
     color: inherit;
 }
+
+.correct {
+    background-color: rgb(150, 235, 66);
+}
+
+.wrong {
+    background-color: rgb(207, 76, 76);
+}
+
+.alert {
+    margin-bottom: 0px;
+}
+
+.my-para {
+    margin-bottom: 0px;
+    padding: 0.5rem 0 0.5rem 0;
+}
