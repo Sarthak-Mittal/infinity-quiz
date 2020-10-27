@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
 
@@ -14,49 +15,50 @@ export class ZenCanvasComponent implements OnInit {
   result: boolean;
 
   triviaResponse: triviaResponse = null;
-  inTransit : boolean = false;
+  inTransit: boolean = false;
 
-  constructor(private triviaDbService: TriviaDbService) { 
+  constructor(private triviaDbService: TriviaDbService) {
   }
-  
+
   ngOnInit(): void {
-    this.getQuestion();     
+    this.getQuestion();
   }
-  
 
 
-  cllme(val){
-    console.log("ANSWER_______"+val)
-    this.getQuestion()
+
+  cllme(val) {
+    timer(1800).subscribe(x=>{ this.getQuestion() })
   }
-  getQuestion(){
+  getQuestion() {
     this.inTransit = true
-    this.triviaDbService.getQuestion("1","multiple").subscribe(
-      (data: triviaResponse) =>{
+    this.triviaDbService.getQuestion("1", "multiple").subscribe(
+      (data: triviaResponse) => {
+
+
         this.triviaResponse = data;
-        
-        if(this.triviaResponse.response_code == "0"){
+
+        if (this.triviaResponse.response_code == "0") {
           this.statement = this.triviaResponse.results[0].question;
           this.correctAnswer = this.triviaResponse.results[0].correct_answer;
-          this.options = this.jumbleUpOptions(this.triviaResponse.results[0].correct_answer, this.triviaResponse.results[0].incorrect_answers);    
+          this.options = this.jumbleUpOptions(this.triviaResponse.results[0].correct_answer, this.triviaResponse.results[0].incorrect_answers);
         }
         this.inTransit = false
       },
-      (error)=>{
+      (error) => {
         console.log(error)
       }
     )
   }
 
-  jumbleUpOptions(correct: string, incorrect: string[]){
+  jumbleUpOptions(correct: string, incorrect: string[]) {
 
     let options: string[] = [];
     options.push(correct)
-    incorrect.forEach((elem) =>{
+    incorrect.forEach((elem) => {
       options.push(elem)
     })
-    
-    for(let i=0; i<=this.getRandomInt(10); i++){
+
+    for (let i = 0; i <= this.getRandomInt(10); i++) {
       let temp;
       let a = this.getRandomInt(4)
       let b = this.getRandomInt(4)
@@ -72,6 +74,6 @@ export class ZenCanvasComponent implements OnInit {
   }
 
 
-  
+
 
 }
