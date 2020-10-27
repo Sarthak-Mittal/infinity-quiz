@@ -16,7 +16,8 @@ export class TriviaDbService {
     const params = new HttpParams()
       .set('type', type)
       .set('amount', noOfQuestion)
-      .set('difficulty', 'easy');
+      .set('difficulty', 'easy')
+      .set('encode', 'base64');
     return this.http.get<triviaResponse>(ROOT_URL, {params});
   }
 }

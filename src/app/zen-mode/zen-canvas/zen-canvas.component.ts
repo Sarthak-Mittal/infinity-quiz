@@ -38,8 +38,8 @@ export class ZenCanvasComponent implements OnInit {
         this.triviaResponse = data;
 
         if (this.triviaResponse.response_code == "0") {
-          this.statement = this.triviaResponse.results[0].question;
-          this.correctAnswer = this.triviaResponse.results[0].correct_answer;
+          this.statement = atob(this.triviaResponse.results[0].question);
+          this.correctAnswer = atob(this.triviaResponse.results[0].correct_answer);
           this.options = this.jumbleUpOptions(this.triviaResponse.results[0].correct_answer, this.triviaResponse.results[0].incorrect_answers);
         }
         this.inTransit = false
@@ -53,9 +53,9 @@ export class ZenCanvasComponent implements OnInit {
   jumbleUpOptions(correct: string, incorrect: string[]) {
 
     let options: string[] = [];
-    options.push(correct)
+    options.push(atob(correct))
     incorrect.forEach((elem) => {
-      options.push(elem)
+      options.push(atob(elem))
     })
 
     for (let i = 0; i <= this.getRandomInt(10); i++) {
