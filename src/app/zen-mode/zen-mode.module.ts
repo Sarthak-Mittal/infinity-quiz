@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ZenCanvasComponent } from './zen-canvas/zen-canvas.component';
 import { QuestionModule } from '../question/question.module';
 import { MaterialModule } from '../shared/material';
+import { ZenLandingPageComponent } from './zen-landing-page/zen-landing-page.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { MaterialModule } from '../shared/material';
     MaterialModule
   ],
   declarations: [
-    ZenCanvasComponent
+    ZenCanvasComponent,
+    ZenLandingPageComponent
   ],
   exports:[
     ZenCanvasComponent

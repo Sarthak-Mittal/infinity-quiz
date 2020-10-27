@@ -12,11 +12,11 @@ export class TriviaDbService {
 
   constructor(private http: HttpClient) { }
 
-  getQuestion(noOfQuestion: string, type:string ):Observable<triviaResponse>{
+  getQuestion(noOfQuestion: string, type:string, difficulty: string ):Observable<triviaResponse>{
     const params = new HttpParams()
       .set('type', type)
       .set('amount', noOfQuestion)
-      .set('difficulty', 'easy')
+      .set('difficulty', difficulty)
       .set('encode', 'base64');
     return this.http.get<triviaResponse>(ROOT_URL, {params});
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
@@ -9,6 +9,9 @@ import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
   styleUrls: ['./zen-canvas.component.css']
 })
 export class ZenCanvasComponent implements OnInit {
+
+  @Input() difficulty: string;
+
   statement: string;
   options: string[] = [];
   correctAnswer: string;
@@ -20,18 +23,19 @@ export class ZenCanvasComponent implements OnInit {
   constructor(private triviaDbService: TriviaDbService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+  
+  ngOnChanges(){
     this.getQuestion();
   }
-
-
 
   getNextQuestion(event) {
     timer(1800).subscribe(x=>{ this.getQuestion() })
   }
+
   getQuestion() {
     this.inTransit = true
-    this.triviaDbService.getQuestion("1", "multiple").subscribe(
+    this.triviaDbService.getQuestion("1", "multiple", this.difficulty).subscribe(
       (data: triviaResponse) => {
 
 

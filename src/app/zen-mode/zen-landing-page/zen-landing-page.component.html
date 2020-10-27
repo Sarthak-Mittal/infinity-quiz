@@ -1,0 +1,12 @@
+<div class="d-flex flex-row-reverse">
+    <mat-form-field appearance="fill">
+        <mat-label>Difficulty</mat-label>
+        <mat-select [(value)]="selectedDifficulty">
+            <mat-option class="my-option" value="easy">Easy</mat-option>
+            <mat-option class="my-option" value="medium">Medium</mat-option>
+            <mat-option class="my-option" value="hard">Hard</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<app-zen-canvas [difficulty]="selectedDifficulty"></app-zen-canvas>
