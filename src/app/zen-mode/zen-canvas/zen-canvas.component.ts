@@ -26,7 +26,7 @@ export class ZenCanvasComponent implements OnInit {
 
 
 
-  cllme(val) {
+  getNextQuestion(event) {
     timer(1800).subscribe(x=>{ this.getQuestion() })
   }
   getQuestion() {
