@@ -12,7 +12,7 @@ export class OptionsComponent implements OnInit {
   @Output() result = new EventEmitter<boolean>();
 
 
-  answerGiven: boolean;
+  answerGiven: boolean = false;
   optionChosen: string;
 
   selected(option: string){
@@ -32,7 +32,12 @@ export class OptionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.answerGiven = false;
+
+  }
+
+  ngOnChanges(){
+    this.answerGiven=null
+    this.optionChosen=null;
   }
 
 }

@@ -1,8 +1,8 @@
 <mat-spinner class="mx-auto my-spinner" *ngIf="inTransit"></mat-spinner>
 
-<div class="zen-canvas container">
-    <app-statement [statement]="statement" [options]="options" [correctAns]="correctAnswer" (result)="result=$event">
+<div class="zen-canvas container" *ngIf="!inTransit">
+    <app-statement [statement]="statement" [options]="options" [correctAns]="correctAnswer" (result)="cllme($event)">
     </app-statement>
 </div>
 <!-- <div *ngIf="correctAnswer === selected && correctAnswer != null && selected != null">Correct</div> -->
-<div>{{result}}</div>
+<!-- <div>{{result}}</div> -->
