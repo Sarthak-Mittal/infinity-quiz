@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { timer } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
@@ -12,6 +13,9 @@ export class ZenCanvasComponent implements OnInit {
 
   @Input() difficulty: string;
 
+  winRation : number = 0
+  totalQuestions : number = 0
+  rightAnswerCount : number = 0
   statement: string;
   options: string[] = [];
   correctAnswer: string;
@@ -22,14 +26,26 @@ export class ZenCanvasComponent implements OnInit {
 
   constructor(private triviaDbService: TriviaDbService) {
   }
-
+  
   ngOnInit(): void { }
   
+  
   ngOnChanges(){
+    this.totalQuestions = 0;
+    this.rightAnswerCount = 0;
+    this.calculateWinRation();
     this.getQuestion();
   }
 
-  getNextQuestion(event) {
+  calculateWinRation(){
+    this.winRation = (this.rightAnswerCount/this.totalQuestions)*100
+  }
+
+  getNextQuestion(isAnswerRight) {
+    if(isAnswerRight){
+      this.rightAnswerCount++
+    }
+    this.calculateWinRation()
     timer(1800).subscribe(x=>{ this.getQuestion() })
   }
 
@@ -45,6 +61,7 @@ export class ZenCanvasComponent implements OnInit {
           this.statement = atob(this.triviaResponse.results[0].question);
           this.correctAnswer = atob(this.triviaResponse.results[0].correct_answer);
           this.options = this.jumbleUpOptions(this.triviaResponse.results[0].correct_answer, this.triviaResponse.results[0].incorrect_answers);
+          this.totalQuestions++;
         }
         this.inTransit = false
       },

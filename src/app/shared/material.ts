@@ -9,6 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
@@ -22,7 +23,8 @@ import {MatSelectModule} from '@angular/material/select';
         MatCardModule,
         MatDividerModule,
         MatProgressSpinnerModule,
-        MatSelectModule
+        MatSelectModule,
+        MatProgressBarModule
     ],
     exports: [
         MatToolbarModule,
@@ -33,7 +35,8 @@ import {MatSelectModule} from '@angular/material/select';
         MatCardModule,
         MatDividerModule,
         MatProgressSpinnerModule,
-        MatSelectModule
+        MatSelectModule,
+        MatProgressBarModule
     ]
 })
 export class MaterialModule {

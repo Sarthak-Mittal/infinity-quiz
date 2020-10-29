@@ -1,6 +1,10 @@
 .my-card {
     background-color: inherit;
-    color: ivory;
+    color: rgb(230, 230, 230);
     border: 0px;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.disabled {
+    opacity: 0.9;
 }
