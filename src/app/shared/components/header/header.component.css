@@ -11,3 +11,7 @@
     width: 10rem;
     height: 100%;
 }
+
+.mousePointer {
+    cursor: pointer;
+}
