@@ -1,12 +1,26 @@
 <div class="d-flex flex-row-reverse">
-    <mat-form-field appearance="fill">
-        <mat-label>Difficulty</mat-label>
-        <mat-select [(value)]="selectedDifficulty">
-            <mat-option class="my-option" value="easy">Easy</mat-option>
-            <mat-option class="my-option" value="medium">Medium</mat-option>
-            <mat-option class="my-option" value="hard">Hard</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="p-2">
+        <mat-form-field>
+            <mat-label>Difficulty</mat-label>
+            <mat-select [(value)]="selectedDifficulty">
+                <mat-option class="my-option" value="easy">Easy</mat-option>
+                <mat-option class="my-option" value="medium">Medium</mat-option>
+                <mat-option class="my-option" value="hard">Hard</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div class="p-2">
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <!-- <mat-select [(value)]="selectedCategory"> -->
+            <mat-select [(value)]="selectedCategory">
+                <mat-option class="my-option" value="{{category.value}}" *ngFor="let category of options">
+                    {{category.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 </div>
 
-<app-zen-canvas [difficulty]="selectedDifficulty"></app-zen-canvas>
+<app-zen-canvas [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-zen-canvas>

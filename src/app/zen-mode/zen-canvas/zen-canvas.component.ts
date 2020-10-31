@@ -12,6 +12,7 @@ import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
 export class ZenCanvasComponent implements OnInit {
 
   @Input() difficulty: string;
+  @Input() category: string;
 
   winRation : number = 0
   totalQuestions : number = 0
@@ -31,6 +32,7 @@ export class ZenCanvasComponent implements OnInit {
   
   
   ngOnChanges(){
+    console.log("category::"+this.category)
     this.totalQuestions = 0;
     this.rightAnswerCount = 0;
     this.calculateWinRation();
@@ -51,7 +53,7 @@ export class ZenCanvasComponent implements OnInit {
 
   getQuestion() {
     this.inTransit = true
-    this.triviaDbService.getQuestion("1", "multiple", this.difficulty).subscribe(
+    this.triviaDbService.getQuestion("1", "multiple", this.difficulty, this.category).subscribe(
       (data: triviaResponse) => {
 
 

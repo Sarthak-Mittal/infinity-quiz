@@ -14,6 +14,7 @@ import { TimeBasedModule } from './time-based/time-based.module';
 import { TwoPlayerModule } from './two-player/two-player.module';
 import { TriviaDbService } from './shared/services/trivia-db.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryService } from './shared/services/category.service';
 
 
 @NgModule({
@@ -33,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     TwoPlayerModule,
     HttpClientModule
   ],
-  providers: [TriviaDbService],
+  providers: [
+    TriviaDbService, 
+    CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
