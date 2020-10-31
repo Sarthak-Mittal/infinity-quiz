@@ -15,3 +15,9 @@
 .mousePointer {
     cursor: pointer;
 }
+
+.img-fluid {
+    max-height: 70% !important;
+    margin-right: 1% !important;
+    margin-left: 1% !important;
+}
