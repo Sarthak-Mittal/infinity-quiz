@@ -20,15 +20,19 @@ export class ZenLandingPageComponent implements OnInit {
   selectedDifficulty = 'medium';
   category: string;
 
+  inTransit: boolean = false;
+
   constructor(private categoryService: CategoryService) {
 
+    this.inTransit = true;
     this.categoryService.getCategories().
-      subscribe(
-        res => {
-          this.categories = <Category>res;
-          for (let cate of Object.values(this.categories)) {
-            this.options.push(cate)
+    subscribe(
+      res => {
+        this.categories = <Category>res;
+        for (let cate of Object.values(this.categories)) {
+          this.options.push(cate)
           }
+          this.inTransit = false;
         }
       )
   }

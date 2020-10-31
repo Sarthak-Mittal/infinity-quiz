@@ -55,7 +55,6 @@ export class ZenCanvasComponent implements OnInit {
     this.triviaDbService.getQuestion("1", "multiple", this.difficulty, this.category).subscribe(
       (data: triviaResponse) => {
 
-
         this.triviaResponse = data;
 
         if (this.triviaResponse.response_code == "0") {
