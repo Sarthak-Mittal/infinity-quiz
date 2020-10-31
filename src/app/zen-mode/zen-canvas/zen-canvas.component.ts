@@ -32,7 +32,6 @@ export class ZenCanvasComponent implements OnInit {
   
   
   ngOnChanges(){
-    console.log("category::"+this.category)
     this.totalQuestions = 0;
     this.rightAnswerCount = 0;
     this.calculateWinRation();
