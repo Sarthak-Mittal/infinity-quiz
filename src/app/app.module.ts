@@ -15,6 +15,8 @@ import { TwoPlayerModule } from './two-player/two-player.module';
 import { TriviaDbService } from './shared/services/trivia-db.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './shared/services/category.service';
+import { SettingsComponent } from './shared/components/settings/settings.component';
+import { SharedService } from './shared/services/shared.service';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { CategoryService } from './shared/services/category.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SideNavComponent
+    SideNavComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { CategoryService } from './shared/services/category.service';
   ],
   providers: [
     TriviaDbService, 
-    CategoryService
+    CategoryService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,42 @@
+import { Component, OnInit } from '@angular/core';
+import { Category } from '../../interface/category';
+import { CategoryService } from '../../services/category.service';
+import { SharedService } from '../../services/shared.service';
+
+@Component({
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.css']
+})
+export class SettingsComponent implements OnInit {
+
+
+  categories: Category;
+  options: Category[] = [];
+
+  constructor(
+    private categoryService: CategoryService,
+    private sharedService: SharedService) {
+
+    this.categoryService.getCategories().subscribe(
+      res => {
+        this.categories = <Category>res;
+        for (let cate of Object.values(this.categories)) {
+          this.options.push(cate)
+        }
+      }
+    )
+  }
+
+  ngOnInit(): void {
+  }
+
+  onCategoryChange(value) {
+    this.sharedService.category.next(value);
+  }
+
+  onDifficultyChange(value) {
+    this.sharedService.difficulty.next(value);
+  }
+}
+

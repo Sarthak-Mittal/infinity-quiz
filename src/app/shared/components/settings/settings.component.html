@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Difficulty</mat-label>
+                <mat-select (selectionChange)="onDifficultyChange($event.value)" disableOptionCentering>
+                    <mat-option class="my-option" value="easy">Easy</mat-option>
+                    <mat-option class="my-option" value="medium">Medium</mat-option>
+                    <mat-option class="my-option" value="hard">Hard</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field>
+                <mat-label>Category</mat-label>
+                <mat-select (selectionChange)="onCategoryChange($event.value)" disableOptionCentering>
+                    <mat-option class="my-option" value="{{category.value}}" *ngFor="let category of options">
+                        {{category.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+</div>

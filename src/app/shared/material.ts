@@ -14,6 +14,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+
 
 
 
@@ -32,7 +34,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         MatAutocompleteModule,
         MatDialogModule,
         MatInputModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatBottomSheetModule
     ],
     exports: [
         MatToolbarModule,
@@ -48,7 +51,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
         MatAutocompleteModule,
         MatDialogModule,
         MatInputModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MatBottomSheetModule
     ]
 })
 export class MaterialModule {
