@@ -1,10 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { Observable } from 'rxjs';
-import { SettingsComponent } from 'src/app/shared/components/settings/settings.component';
-import { Category } from 'src/app/shared/interface/category';
-import { CategoryService } from 'src/app/shared/services/category.service';
 import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
@@ -15,18 +9,15 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 export class ZenLandingPageComponent implements OnInit {
 
 
-  selectedCategory = '';
-  selectedDifficulty = 'medium';
-
+  selectedCategory: string;
+  selectedDifficulty: string;
 
   constructor(
-    private categoryService: CategoryService,
-    private _bottomSheet: MatBottomSheet,
     private sharedService: SharedService) {
 
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
 
     this.sharedService.difficulty.subscribe(
       val => {
@@ -43,8 +34,6 @@ export class ZenLandingPageComponent implements OnInit {
   }
 
 
-  openBottomSheet(): void {
-    this._bottomSheet.open(SettingsComponent);
-  }
+
 
 }
