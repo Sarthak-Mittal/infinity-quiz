@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Observable } from 'rxjs';
+import { SettingsComponent } from 'src/app/shared/components/settings/settings.component';
 import { Category } from 'src/app/shared/interface/category';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-zen-landing-page',
@@ -11,32 +14,37 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 })
 export class ZenLandingPageComponent implements OnInit {
 
-  categories: Category;
-  myControl = new FormControl();
-  options: Category[] = [];
-  filteredOptions: Observable<string[]>;
 
   selectedCategory = '';
   selectedDifficulty = 'medium';
-  category: string;
 
-  inTransit: boolean = false;
 
-  constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    private _bottomSheet: MatBottomSheet,
+    private sharedService: SharedService) {
 
-    this.inTransit = true;
-    this.categoryService.getCategories().
-    subscribe(
-      res => {
-        this.categories = <Category>res;
-        for (let cate of Object.values(this.categories)) {
-          this.options.push(cate)
-          }
-          this.inTransit = false;
-        }
-      )
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+
+    this.sharedService.difficulty.subscribe(
+      val => {
+        this.selectedDifficulty = val
+      }
+    )
+
+    this.sharedService.category.subscribe(
+      val => {
+        this.selectedCategory = val
+      }
+    )
+
+  }
+
+
+  openBottomSheet(): void {
+    this._bottomSheet.open(SettingsComponent);
+  }
 
 }
