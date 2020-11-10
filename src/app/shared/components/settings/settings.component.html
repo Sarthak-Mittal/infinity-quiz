@@ -2,9 +2,9 @@
 
     <div class="row">
         <div class="col">
-            <mat-form-field>
+            <mat-form-field class="myFormField">
                 <mat-label>Difficulty</mat-label>
-                <mat-select (selectionChange)="onDifficultyChange($event.value)" disableOptionCentering>
+                <mat-select (selectionChange)="onDifficultyChange($event.value)" [value]="selectedDifficulty" disableOptionCentering>
                     <mat-option class="my-option" value="easy">Easy</mat-option>
                     <mat-option class="my-option" value="medium">Medium</mat-option>
                     <mat-option class="my-option" value="hard">Hard</mat-option>
@@ -14,9 +14,9 @@
     </div>
     <div class="row">
         <div class="col">
-            <mat-form-field>
+            <mat-form-field class="myFormField">
                 <mat-label>Category</mat-label>
-                <mat-select (selectionChange)="onCategoryChange($event.value)" disableOptionCentering>
+                <mat-select (selectionChange)="onCategoryChange($event.value)" [value]="selectedCategory" disableOptionCentering>
                     <mat-option class="my-option" value="{{category.value}}" *ngFor="let category of options">
                         {{category.name}}
                     </mat-option>

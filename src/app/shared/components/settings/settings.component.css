@@ -5,3 +5,7 @@
 .my-option.mat-selected {
     color: white !important;
 }
+
+.myFormField {
+    width: 100%;
+}

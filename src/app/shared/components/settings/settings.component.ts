@@ -13,6 +13,8 @@ export class SettingsComponent implements OnInit {
 
   categories: Category;
   options: Category[] = [];
+  selectedDifficulty: string;
+  selectedCategory: string;
 
   constructor(
     private categoryService: CategoryService,
@@ -29,6 +31,17 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sharedService.difficulty.subscribe(
+      val => {
+        this.selectedDifficulty = val
+      }
+    )
+
+    this.sharedService.category.subscribe(
+      val => {
+        this.selectedCategory = val
+      }
+    )
   }
 
   onCategoryChange(value) {
