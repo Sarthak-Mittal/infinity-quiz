@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimeCanvasComponent } from './time-canvas/time-canvas.component';
+import { TimeLandingPageComponent } from './time-landing-page/time-landing-page.component';
+import { MaterialModule } from '../shared/material';
 
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   declarations: [
-    TimeCanvasComponent
+    TimeCanvasComponent,
+    TimeLandingPageComponent
   ],
   exports: [
     TimeCanvasComponent

@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="container" *ngIf="!isStarted">
+
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <mat-icon>alarm</mat-icon>
+                </div>
+                <mat-card-title class="myHeading">Against Time</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <mat-divider></mat-divider>
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-subtitle class="mySubHeading">Rules</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="myContent">
+                <p> It's a race against time, Questions will keep coming until you are keeping up with time</p>
+                <p> You can change difficulty and category by clicking on settings icon, doing this will reset the game </p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-divider></mat-divider>
+
+        <mat-card>
+            <button mat-raised-button class="startBtn" (click)="startGame()">
+                    Start Game
+                </button>
+        </mat-card>
+
+    </div>
+
+
+    <!-- <app-time-canvas *ngIf="isStarted" [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-time-canvas> -->
+</div>
