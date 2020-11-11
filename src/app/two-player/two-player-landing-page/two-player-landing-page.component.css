@@ -1,0 +1,30 @@
+.container {
+    padding-top: 6vh;
+}
+
+.myHeading {
+    font-size: 2rem;
+    margin: 16px 0px;
+}
+
+.mySubHeading {
+    font-size: 1.1rem;
+}
+
+.myContent {
+    padding: 1em 2em;
+}
+
+.mat-icon {
+    font-size: 3rem;
+}
+
+.startBtn {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
