@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -35,7 +36,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
         MatDialogModule,
         MatInputModule,
         MatFormFieldModule,
-        MatBottomSheetModule
+        MatBottomSheetModule,
+        MatButtonModule
     ],
     exports: [
         MatToolbarModule,
@@ -52,7 +54,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
         MatDialogModule,
         MatInputModule,
         MatFormFieldModule,
-        MatBottomSheetModule
+        MatBottomSheetModule,
+        MatButtonModule
     ]
 })
 export class MaterialModule {

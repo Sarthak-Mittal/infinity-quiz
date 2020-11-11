@@ -1,3 +1,37 @@
 <div class="container">
-    <app-zen-canvas [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-zen-canvas>
+    <div class="container" *ngIf="!isStarted">
+
+        <mat-card>
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <mat-icon>self_improvement</mat-icon>
+                </div>
+                <mat-card-title class="myHeading">Zen Mode</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+        <mat-divider></mat-divider>
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-subtitle class="mySubHeading">Rules</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="myContent">
+                <p> Questions will keep coming endlessly, soul purpose of this mode is self improvement </p>
+                <p> You can change difficulty and category by clicking on settings icon, doing this will reset the game </p>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-divider></mat-divider>
+
+        <mat-card>
+            <button mat-raised-button class="startBtn" (click)="startGame()">
+                    Start Game
+                </button>
+        </mat-card>
+
+    </div>
+
+
+    <app-zen-canvas *ngIf="isStarted" [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-zen-canvas>
 </div>

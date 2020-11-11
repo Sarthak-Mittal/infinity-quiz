@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 })
 export class ZenLandingPageComponent implements OnInit {
 
+  isStarted : boolean;
 
   selectedCategory: string;
   selectedDifficulty: string;
@@ -18,6 +20,8 @@ export class ZenLandingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.isStarted = false;
 
     this.sharedService.difficulty.subscribe(
       val => {
@@ -33,7 +37,11 @@ export class ZenLandingPageComponent implements OnInit {
 
   }
 
-
+  startGame(){
+    timer(800).subscribe(x=>{ 
+      this.isStarted = true;
+    }) 
+  }
 
 
 }
