@@ -1,5 +1,9 @@
-.container {
-    padding-top: 6vh;
+.landingContainer {
+    margin-top: 2rem;
+}
+
+.canvasContainer {
+    margin-top: 3rem;
 }
 
 .myHeading {

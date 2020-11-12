@@ -1,42 +1,54 @@
-<div class="container">
-    <div class="container" *ngIf="!isStarted">
+<div class="container landingContainer" *ngIf="!isStarted">
 
-        <mat-card>
-            <mat-card-header>
-                <div mat-card-avatar>
-                    <mat-icon>alarm</mat-icon>
-                </div>
-                <mat-card-title class="myHeading">Against Time</mat-card-title>
-            </mat-card-header>
-        </mat-card>
+    <!-- Mode Heading -->
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon>alarm</mat-icon>
+            </div>
+            <mat-card-title class="myHeading">Against Time</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+    <mat-divider></mat-divider>
 
-        <mat-divider></mat-divider>
+    <!-- Mode Brief -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-subtitle class="mySubHeading">Rules</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="myContent">
+            <p> It's a race against time, Questions will keep coming until you are keeping up with time</p>
+        </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
 
-        <mat-card>
-            <mat-card-header>
-                <mat-card-subtitle class="mySubHeading">Rules</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content class="myContent">
-                <p> It's a race against time, Questions will keep coming until you are keeping up with time</p>
-                <p> You can change difficulty and category by clicking on settings icon, doing this will reset the game </p>
-            </mat-card-content>
-        </mat-card>
+    <!-- Settings Section -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-subtitle class="mySubHeading">Settings</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="myContent">
+            <p> You can change difficulty and category by clicking on settings icon, doing this will reset the game </p>
+        </mat-card-content>
+        <app-settings></app-settings>
+    </mat-card>
+    <mat-divider></mat-divider>
 
-        <mat-divider></mat-divider>
-
-        <!-- <mat-card>
+    <!-- Button to begin game -->
+    <!-- <mat-card>
             <button mat-raised-button class="startBtn" (click)="startGame()">
                 Start Game
             </button>
         </mat-card> -->
-        <mat-card>
-            <button disabled class="startBtn">
-                Under Development, Please try later
+    <mat-card>
+        <button disabled class="startBtn">
+                Under Developmen
             </button>
-        </mat-card>
+    </mat-card>
 
-    </div>
+</div>
 
 
+<div class="container canvasContainer">
     <!-- <app-time-canvas *ngIf="isStarted" [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-time-canvas> -->
 </div>
