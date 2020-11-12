@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { TwoPlayerCanvasComponent } from './two-player-canvas/two-player-canvas.component';
 import { TwoPlayerLandingPageComponent } from './two-player-landing-page/two-player-landing-page.component';
 import { MaterialModule } from '../shared/material';
+import { ReuseModule } from '../reuse/reuse.module';
 
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReuseModule
   ],
   declarations: [
     TwoPlayerCanvasComponent,
