@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { SettingsComponent } from '../settings/settings.component';
+import { BottomSheetComponent } from 'src/app/reuse/components/bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openBottomSheet(): void {
-    this.bottomSheet.open(SettingsComponent);
+    this.bottomSheet.open(BottomSheetComponent);
   }
 
 }

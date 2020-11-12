@@ -15,8 +15,8 @@ import { TwoPlayerModule } from './two-player/two-player.module';
 import { TriviaDbService } from './shared/services/trivia-db.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './shared/services/category.service';
-import { SettingsComponent } from './shared/components/settings/settings.component';
 import { SharedService } from './shared/services/shared.service';
+import { ReuseModule } from './reuse/reuse.module';
 
 
 @NgModule({
@@ -25,7 +25,6 @@ import { SharedService } from './shared/services/shared.service';
     HeaderComponent,
     FooterComponent,
     SideNavComponent,
-    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +34,8 @@ import { SharedService } from './shared/services/shared.service';
     ZenModeModule,
     TimeBasedModule,
     TwoPlayerModule,
-    HttpClientModule
+    HttpClientModule,
+    ReuseModule
   ],
   providers: [
     TriviaDbService, 

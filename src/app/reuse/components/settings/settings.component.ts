@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../../interface/category';
-import { CategoryService } from '../../services/category.service';
-import { SharedService } from '../../services/shared.service';
+import { Category } from 'src/app/shared/interface/category';
+import { CategoryService } from 'src/app/shared/services/category.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-settings',
@@ -10,7 +10,7 @@ import { SharedService } from '../../services/shared.service';
 })
 export class SettingsComponent implements OnInit {
 
-
+  
   categories: Category;
   options: Category[] = [];
   selectedDifficulty: string;

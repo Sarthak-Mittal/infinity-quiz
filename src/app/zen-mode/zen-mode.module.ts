@@ -5,6 +5,7 @@ import { QuestionModule } from '../question/question.module';
 import { MaterialModule } from '../shared/material';
 import { ZenLandingPageComponent } from './zen-landing-page/zen-landing-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReuseModule } from '../reuse/reuse.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    ReuseModule
   ],
   declarations: [
     ZenCanvasComponent,
