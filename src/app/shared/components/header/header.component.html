@@ -3,7 +3,7 @@
     <img class="img-fluid" src="assets/images/InfinityQuiz_Logo.png">
     <span class="spacer"></span>
     <!-- <mat-icon>favorite</mat-icon> -->
-    <mat-icon (click)="openBottomSheet()">settings</mat-icon>
+    <mat-icon *ngIf="gameStarted" (click)="openBottomSheet()">settings</mat-icon>
 </mat-toolbar>
 
 <mat-drawer-container class="my-drawer-container" autosize>

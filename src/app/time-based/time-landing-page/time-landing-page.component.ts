@@ -22,6 +22,7 @@ export class TimeLandingPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.isStarted = false;
+    this.sharedService.hasGameStarted.next(false);
 
     this.sharedService.difficulty.subscribe(
       val => {

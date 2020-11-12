@@ -22,6 +22,7 @@ export class ZenLandingPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.isStarted = false;
+    this.sharedService.hasGameStarted.next(false);
 
     this.sharedService.difficulty.subscribe(
       val => {
@@ -38,8 +39,9 @@ export class ZenLandingPageComponent implements OnInit {
   }
 
   startGame(){
-    timer(800).subscribe(x=>{ 
+    timer(700).subscribe(x=>{ 
       this.isStarted = true;
+      this.sharedService.hasGameStarted.next(true);
     }) 
   }
 
