@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { CommonFunctionService } from 'src/app/shared/services/common-function.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 import { TriviaDbService } from 'src/app/shared/services/trivia-db.service';
 
 @Component({
@@ -27,26 +28,43 @@ export class TimeCanvasComponent implements OnInit, OnChanges {
   timeLeft: number;
   TOTAL_TIME: number = 100;
   TIME_INCENTIVE: number = 10;
-  TIME_PENALTY: number = 10;
+  TIME_PENALTY: number = 70;
+
+  gameOver: boolean;
+  timeSurvived: number;
 
   constructor(private triviaDbService: TriviaDbService,
-    private commonFunc: CommonFunctionService) { }
+    private commonFunc: CommonFunctionService,
+    private sharedService: SharedService) { }
 
   ngOnInit(): void {
 
     this.totalQuestions = 0;
     this.rightAnswerCount = 0;
+    this.gameOver = false;
+    this.timeSurvived = 0;
 
     this.timeLeft = this.TOTAL_TIME;
     this.countDown = interval(100).subscribe(x => {
-      this.timeLeft -= 0.1;
+      if (this.timeLeft > 0) {
+        this.timeLeft -= 0.1;
+        this.timeSurvived += 0.1;
+      } else {
+        this.over();;
+      }
     });
   }
+
+
 
   ngOnChanges() {
     this.getQuestion();
   }
 
+  over() {
+    this.gameOver = true;
+    this.sharedService.hasGameStarted.next(false);
+  }
 
   getQuestion() {
     this.inTransit = true

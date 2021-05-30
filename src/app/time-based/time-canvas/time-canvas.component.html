@@ -1,4 +1,4 @@
-<div *ngIf="timeLeft>0">
+<div *ngIf="!gameOver">
 
     <mat-progress-bar mode="determinate" [value]="timeLeft"></mat-progress-bar>
 
@@ -11,9 +11,24 @@
     </div>
 </div>
 
-<div *ngIf="timeLeft<0">
-    times up
+<div *ngIf="gameOver">
 
-    <div>right ans: {{rightAnswerCount}}</div>
-    <div>total ques: {{totalQuestions}}</div>
+    <mat-card>
+
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon>alarm</mat-icon>
+            </div>
+            <mat-card-title>Time's up</mat-card-title>
+            <mat-card-subtitle>you ran out of time</mat-card-subtitle>
+        </mat-card-header>
+        <div style="width:100%;height:0;padding-bottom:83%;position:relative;">
+            <iframe src="https://giphy.com/embed/CZGcUfnAy3ayJw2eZX" width="100%" height="100%"
+                style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+
+    </mat-card>
+
+    <mat-card id='timeSurvivedMsg'>You survived {{timeSurvived | number : '1.2-2'}} seconds</mat-card>
+
 </div>
