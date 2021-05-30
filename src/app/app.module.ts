@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoryService } from './shared/services/category.service';
 import { SharedService } from './shared/services/shared.service';
 import { ReuseModule } from './reuse/reuse.module';
+import { CommonFunctionService } from './shared/services/common-function.service';
 
 
 @NgModule({
@@ -38,9 +39,10 @@ import { ReuseModule } from './reuse/reuse.module';
     ReuseModule
   ],
   providers: [
-    TriviaDbService, 
+    TriviaDbService,
     CategoryService,
-    SharedService
+    SharedService,
+    CommonFunctionService
   ],
   bootstrap: [AppComponent]
 })
