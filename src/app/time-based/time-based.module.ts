@@ -5,6 +5,9 @@ import { TimeLandingPageComponent } from './time-landing-page/time-landing-page.
 import { MaterialModule } from '../shared/material';
 import { ReuseModule } from '../reuse/reuse.module';
 import { QuestionModule } from '../question/question.module';
+import { TimeModeInitiatorComponent } from './time-mode-initiator/time-mode-initiator.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { TimeInfoComponent } from './time-info/time-info.component';
 
 
 
@@ -13,11 +16,14 @@ import { QuestionModule } from '../question/question.module';
     CommonModule,
     MaterialModule,
     ReuseModule,
-    QuestionModule
+    QuestionModule,
+    AppRoutingModule
   ],
   declarations: [
     TimeCanvasComponent,
-    TimeLandingPageComponent
+    TimeLandingPageComponent,
+    TimeModeInitiatorComponent,
+    TimeInfoComponent
   ],
   exports: [
     TimeCanvasComponent

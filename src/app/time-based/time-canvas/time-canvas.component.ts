@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription, interval } from 'rxjs';
 import { triviaResponse } from 'src/app/shared/model/triviaResponse';
 import { CommonFunctionService } from 'src/app/shared/services/common-function.service';
@@ -26,16 +27,17 @@ export class TimeCanvasComponent implements OnInit, OnChanges {
   rightAnswerCount: number = 0;
 
   timeLeft: number;
-  TOTAL_TIME: number = 100;
+  TOTAL_TIME: number = 50;
   TIME_INCENTIVE: number = 10;
-  TIME_PENALTY: number = 70;
+  TIME_PENALTY: number = 10;
 
   gameOver: boolean;
   timeSurvived: number;
 
   constructor(private triviaDbService: TriviaDbService,
     private commonFunc: CommonFunctionService,
-    private sharedService: SharedService) { }
+    private sharedService: SharedService,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -103,7 +105,9 @@ export class TimeCanvasComponent implements OnInit, OnChanges {
   }
 
 
-
+  restartGame() {
+    this.router.navigate(['time']);
+  }
 
   ngOnDestroy() {
     this.countDown.unsubscribe();

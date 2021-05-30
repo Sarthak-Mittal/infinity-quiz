@@ -29,6 +29,12 @@
 
     </mat-card>
 
-    <mat-card id='timeSurvivedMsg'>You survived {{timeSurvived | number : '1.2-2'}} seconds</mat-card>
+    <mat-card class='restartCard'>You survived {{timeSurvived | number : '1.2-2'}} seconds</mat-card>
+
+    <mat-card class='restartCard'>
+        <button mat-raised-button class="restartBtn" (click)="restartGame()">
+            Restart
+        </button>
+    </mat-card>
 
 </div>
