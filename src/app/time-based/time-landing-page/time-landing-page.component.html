@@ -34,21 +34,21 @@
     </mat-card>
     <mat-divider></mat-divider>
 
-    <!-- Button to begin game -->
-    <!-- <mat-card>
-            <button mat-raised-button class="startBtn" (click)="startGame()">
-                Start Game
-            </button>
-        </mat-card> -->
     <mat-card>
+        <button mat-raised-button class="startBtn" (click)="startGame()">
+            Start Game
+        </button>
+    </mat-card>
+    <!-- <mat-card>
         <button disabled class="startBtn">
                 Under Development
             </button>
-    </mat-card>
+    </mat-card> -->
 
 </div>
 
 
 <div class="container canvasContainer">
-    <!-- <app-time-canvas *ngIf="isStarted" [category]="selectedCategory" [difficulty]="selectedDifficulty"></app-time-canvas> -->
+    <app-time-canvas *ngIf="isStarted" [category]="selectedCategory" [difficulty]="selectedDifficulty">
+    </app-time-canvas>
 </div>

@@ -4,6 +4,7 @@ import { TimeCanvasComponent } from './time-canvas/time-canvas.component';
 import { TimeLandingPageComponent } from './time-landing-page/time-landing-page.component';
 import { MaterialModule } from '../shared/material';
 import { ReuseModule } from '../reuse/reuse.module';
+import { QuestionModule } from '../question/question.module';
 
 
 
@@ -11,7 +12,8 @@ import { ReuseModule } from '../reuse/reuse.module';
   imports: [
     CommonModule,
     MaterialModule,
-    ReuseModule
+    ReuseModule,
+    QuestionModule
   ],
   declarations: [
     TimeCanvasComponent,

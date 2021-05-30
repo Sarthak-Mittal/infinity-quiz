@@ -1,1 +1,19 @@
-<p>Under development</p>
+<div *ngIf="timeLeft>0">
+
+    <mat-progress-bar mode="determinate" [value]="timeLeft"></mat-progress-bar>
+
+    <mat-spinner class="mx-auto my-spinner" *ngIf="inTransit"></mat-spinner>
+
+    <div class="time-canvas container" *ngIf="!inTransit">
+        <app-statement [statement]="statement" [options]="options" [correctAns]="correctAnswer"
+            (result)="getNextQuestion($event)">
+        </app-statement>
+    </div>
+</div>
+
+<div *ngIf="timeLeft<0">
+    times up
+
+    <div>right ans: {{rightAnswerCount}}</div>
+    <div>total ques: {{totalQuestions}}</div>
+</div>

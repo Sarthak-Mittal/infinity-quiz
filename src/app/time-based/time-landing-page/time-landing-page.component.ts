@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 })
 export class TimeLandingPageComponent implements OnInit {
 
-  isStarted : boolean;
+  isStarted: boolean;
 
   selectedCategory: string;
   selectedDifficulty: string;
@@ -38,10 +38,11 @@ export class TimeLandingPageComponent implements OnInit {
 
   }
 
-  startGame(){
-    timer(800).subscribe(x=>{ 
+  startGame() {
+    timer(800).subscribe(x => {
       this.isStarted = true;
-    }) 
+      this.sharedService.hasGameStarted.next(true);
+    })
   }
 
 
