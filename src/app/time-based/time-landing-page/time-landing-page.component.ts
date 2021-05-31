@@ -14,6 +14,6 @@ export class TimeLandingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sharedService.hasGameStarted.next(false);
+    Promise.resolve(null).then(() => { this.sharedService.hasGameStarted.next(false); })
   }
 }

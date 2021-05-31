@@ -15,7 +15,7 @@ export class TimeModeInitiatorComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.sharedService.hasGameStarted.next(true);
+    Promise.resolve(null).then(() => { this.sharedService.hasGameStarted.next(true); })
 
     this.sharedService.difficulty.subscribe(
       val => {

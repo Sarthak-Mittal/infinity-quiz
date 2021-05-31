@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 })
 export class TwoPlayerLandingPageComponent implements OnInit {
 
-  isStarted : boolean;
+  isStarted: boolean;
 
   selectedCategory: string;
   selectedDifficulty: string;
@@ -22,7 +22,7 @@ export class TwoPlayerLandingPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.isStarted = false;
-    this.sharedService.hasGameStarted.next(false);
+    Promise.resolve(null).then(() => { this.sharedService.hasGameStarted.next(false) })
 
     this.sharedService.difficulty.subscribe(
       val => {
@@ -38,10 +38,10 @@ export class TwoPlayerLandingPageComponent implements OnInit {
 
   }
 
-  startGame(){
-    timer(800).subscribe(x=>{ 
+  startGame() {
+    timer(800).subscribe(x => {
       this.isStarted = true;
-    }) 
+    })
   }
 
 }

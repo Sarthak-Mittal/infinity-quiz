@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 })
 export class ZenLandingPageComponent implements OnInit {
 
-  isStarted : boolean;
+  isStarted: boolean;
 
   selectedCategory: string;
   selectedDifficulty: string;
@@ -22,7 +22,8 @@ export class ZenLandingPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.isStarted = false;
-    this.sharedService.hasGameStarted.next(false);
+    Promise.resolve(null).then(() => { this.sharedService.hasGameStarted.next(false); })
+
 
     this.sharedService.difficulty.subscribe(
       val => {
@@ -38,11 +39,11 @@ export class ZenLandingPageComponent implements OnInit {
 
   }
 
-  startGame(){
-    timer(700).subscribe(x=>{ 
+  startGame() {
+    timer(700).subscribe(x => {
       this.isStarted = true;
       this.sharedService.hasGameStarted.next(true);
-    }) 
+    })
   }
 
 
