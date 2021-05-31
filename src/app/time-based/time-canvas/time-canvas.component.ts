@@ -30,6 +30,7 @@ export class TimeCanvasComponent implements OnInit, OnChanges {
   TOTAL_TIME: number = 50;
   TIME_INCENTIVE: number = 10;
   TIME_PENALTY: number = 10;
+  TIME_INTERVAL_BEFORE_FETCH_NEXT_QUESTION: number = 1000;
 
   gameOver: boolean;
   timeSurvived: number;
@@ -99,8 +100,9 @@ export class TimeCanvasComponent implements OnInit, OnChanges {
       } else {
         this.timeLeft -= this.TIME_PENALTY;
       }
+      this.timeLeft += (this.TIME_INTERVAL_BEFORE_FETCH_NEXT_QUESTION / 1000);
       this.getQuestion()
-    }, 200)
+    }, this.TIME_INTERVAL_BEFORE_FETCH_NEXT_QUESTION)
 
   }
 
